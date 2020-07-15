@@ -22,10 +22,13 @@ COPY overlay/ /
 # logstash env variables
 ENV \
     LOGSTASH_HOST="elk:5044" \
-    CACHE_LOGS_DIRECTORY="/var/log/nginx" \
+    CACHE_LOGS_DIRECTORY="/var/log/nginx" \ 
+    \
+# IP address listed below NEEDS to be the same as the host IP
+    \
     DNS_BIND_IP=192.168.2.7 \
     LANCACHE_IP=192.168.2.7
 
-VOLUME ["/var/log", "/data/cache", "/var/www"]
+VOLUME ["/var/log", "/data/cache", "/var/www", "/var/lib/filebeat"]
 
 WORKDIR /opt/lancache-filebeat/
