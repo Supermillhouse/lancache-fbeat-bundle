@@ -1,4 +1,4 @@
-FROM josh5/lancache-bundle:latest
+FROM supermillhouse/lancache-bundle-fix-443-errors:fix-443
 LABEL maintainer="Supermillhouse"
 
 # This Dockerfile is designed to simply pull together the docker-compose
