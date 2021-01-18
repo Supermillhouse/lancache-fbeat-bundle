@@ -1,5 +1,5 @@
 name: "lancache"
-filebeat.prospectors:
+filebeat.inputs:
 - type: log
   paths:
     - CACHE_LOGS_DIRECTORY/*.log
