@@ -21,8 +21,8 @@ fi
 /usr/bin/apt -y install apt-transport-https sudo
 
 # Add elastic apt repo if it does not already exist
-if [[ ! -f /etc/apt/sources.list.d/elastic-6.x.list ]]; then
-    echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+if [[ ! -f /etc/apt/sources.list.d/elastic-7.x.list ]]; then
+    echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
 fi
 
 
