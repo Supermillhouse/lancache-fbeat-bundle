@@ -29,6 +29,6 @@ ENV \
     DNS_BIND_IP=192.168.2.7 \
     LANCACHE_IP=192.168.2.7
 
-VOLUME ["/var/log", "/data/cache", "/var/www"]
+VOLUME ["/var/log", "/data/cache", "/var/www", "/var/lib/filebeat"]
 
 WORKDIR /var/log/
