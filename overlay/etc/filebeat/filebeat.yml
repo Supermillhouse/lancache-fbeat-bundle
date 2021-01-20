@@ -2,7 +2,8 @@ name: "lancache"
 filebeat.inputs:
 - type: log
   paths:
-    - CACHE_LOGS_DIRECTORY/*.log
+    - CACHE_LOGS_DIRECTORY/error.log
+    - CACHE_LOGS_DIRECTORY/access.log
 
 output.logstash:
   hosts: ["LOGSTASH_HOST"]
