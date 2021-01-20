@@ -11,7 +11,7 @@ if [ $EUID != 0 ]; then
     sudo -E "$0" "$@"
     exit $?
 fi
-
+if [[ ! -f /etc/apt/sources.list.d/elastic-7.x.list ]]; then
 # Check all required variables are set
 : "${CACHE_LOGS_DIRECTORY:?must be set}"
 : "${LOGSTASH_HOST:?must be set}"
@@ -21,11 +21,8 @@ fi
 /usr/bin/apt -y install apt-transport-https sudo
 
 # Add elastic apt repo if it does not already exist
-if [[ ! -f /etc/apt/sources.list.d/elastic-7.x.list ]]; then
-    echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
-fi
 
-
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
 
 # Install the key for the elastic repo
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
@@ -40,3 +37,4 @@ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add
 
 # Start filebeat
 service filebeat start
+fi
