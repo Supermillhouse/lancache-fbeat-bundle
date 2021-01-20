@@ -21,22 +21,22 @@ fi
 /usr/bin/apt -y install apt-transport-https sudo
 
 # Add elastic apt repo if it does not already exist
-if [[ ! -f /etc/apt/sources.list.d/elastic-7.x.list ]]; then
-    echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
-fi
+##if [[ ! -f /etc/apt/sources.list.d/elastic-7.x.list ]]; then
+##    echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+##fi
 
 
 
 # Install the key for the elastic repo
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+##wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 
 # Install filebeat
-/usr/bin/apt -y update
-/usr/bin/apt -y install filebeat
+##/usr/bin/apt -y update
+##/usr/bin/apt -y install filebeat
 
-echo "Setting filebeat to ${CACHE_LOGS_DIRECTORY} and  ${LOGSTASH_HOST}"
-sed -i "s|CACHE_LOGS_DIRECTORY|${CACHE_LOGS_DIRECTORY}|"    /etc/filebeat/filebeat.yml
-sed -i "s|LOGSTASH_HOST|${LOGSTASH_HOST}|"    /etc/filebeat/filebeat.yml
+##echo "Setting filebeat to ${CACHE_LOGS_DIRECTORY} and  ${LOGSTASH_HOST}"
+##sed -i "s|CACHE_LOGS_DIRECTORY|${CACHE_LOGS_DIRECTORY}|"    /etc/filebeat/filebeat.yml
+##sed -i "s|LOGSTASH_HOST|${LOGSTASH_HOST}|"    /etc/filebeat/filebeat.yml
 
 # Start filebeat
-service filebeat start
+##service filebeat start
