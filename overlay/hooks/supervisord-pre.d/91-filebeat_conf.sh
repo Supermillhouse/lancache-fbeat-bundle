@@ -36,5 +36,5 @@ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add
 ##sed -i "s|LOGSTASH_HOST|${LOGSTASH_HOST}|"    /etc/filebeat/filebeat.yml
 
 # Start filebeat
-service filebeat start
+##service filebeat start
 fi
