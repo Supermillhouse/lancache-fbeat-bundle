@@ -12,9 +12,9 @@ LABEL maintainer="Supermillhouse"
 #
 
 # Install filebeat
-RUN \
-    echo "**** Install filebeat ****" \
-        && git clone --depth=1 https://github.com/zeropingheroes/lancache-filebeat /opt/lancache-filebeat
+#RUN \
+#    echo "**** Install filebeat ****" \
+#        && git clone --depth=1 https://github.com/zeropingheroes/lancache-filebeat /opt/lancache-filebeat
         
 # Copy in any local config files
 COPY overlay/ /
