@@ -23,9 +23,9 @@ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add
 /usr/bin/apt -y update
 /usr/bin/apt -y install filebeat
 
-##echo "Setting filebeat to ${CACHE_LOGS_DIRECTORY} and  ${LOGSTASH_HOST}"
-##sed -i "s|CACHE_LOGS_DIRECTORY|${CACHE_LOGS_DIRECTORY}|"    /etc/filebeat/filebeat.yml
-##sed -i "s|LOGSTASH_HOST|${LOGSTASH_HOST}|"    /etc/filebeat/filebeat.yml
+echo "Setting filebeat to ${CACHE_LOGS_DIRECTORY} and  ${LOGSTASH_HOST}"
+sed -i "s|CACHE_LOGS_DIRECTORY|${CACHE_LOGS_DIRECTORY}|"    /etc/filebeat/filebeat.yml
+sed -i "s|LOGSTASH_HOST|${LOGSTASH_HOST}|"    /etc/filebeat/filebeat.yml
 
 # Start filebeat
 ##service filebeat start
