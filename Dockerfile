@@ -6,6 +6,7 @@ RUN \
     apt-get update \
     && apt-get install -y \
         nano \
+        net-tools \
     && \
     echo "**** Cleanup files ****" \
         && rm -rf /tmp/* \
