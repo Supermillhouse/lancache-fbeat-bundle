@@ -1,3 +1,4 @@
+path.data: /home/data
 name: "lancache"
 filebeat.inputs:
 - type: log
