@@ -3,14 +3,6 @@
 # Exit if there is an error
 set -e
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-# If script is executed as an unprivileged user
-# Execute it as superuser, preserving environment variables
-if [ $EUID != 0 ]; then
-    sudo -E "$0" "$@"
-    exit $?
-fi
 if [[ ! -f /etc/apt/sources.list.d/elastic-7.x.list ]]; then
 # Check all required variables are set
 : "${CACHE_LOGS_DIRECTORY:?must be set}"
@@ -18,7 +10,7 @@ if [[ ! -f /etc/apt/sources.list.d/elastic-7.x.list ]]; then
 
 # Install apt-transport-https 
 /usr/bin/apt -y update
-/usr/bin/apt -y install apt-transport-https sudo
+/usr/bin/apt -y install apt-transport-https sudo nano net-tools
 
 # Add elastic apt repo if it does not already exist
 
