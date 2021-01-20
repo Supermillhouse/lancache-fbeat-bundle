@@ -5,7 +5,7 @@ LABEL maintainer="Supermillhouse"
 RUN \
     apt-get update \
     && apt-get install -y \
-        nano \
+        nano
 
 # This Dockerfile is designed to simply pull together the docker-compose
 # lancache project into a single image along with zeropingheroes/lancache-filebeat
