@@ -1,17 +1,6 @@
 FROM josh5/lancache-bundle:latest
 LABEL maintainer="Supermillhouse"
 
-
-RUN \
-    apt-get update \
-    && apt-get install -y \
-        nano \
-        net-tools \
-    && \
-    echo "**** Cleanup files ****" \
-        && rm -rf /tmp/* \
-        && rm -rf /var/lib/apt/lists/*
-
 # This Dockerfile is designed to simply pull together the docker-compose
 # lancache project into a single image along with zeropingheroes/lancache-filebeat
 # to work with the zeropingheroes ELK repo.
